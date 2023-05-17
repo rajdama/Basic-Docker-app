@@ -6,8 +6,8 @@ services:
       args:
         NODE_ENV: development
     volumes:
-      - ./:/app
-      - /app/node_modules
+      - ./:/app # sync current directory with container
+      - /app/node_modules # won't touch node modules as we are creating another anonymus volume for it
     environment:
       - NODE_ENV=development
     command: npm run dev
